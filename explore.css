@@ -259,6 +259,10 @@
 .nav-link-item.active-page { color: #0f172a; }
 .nav-link-item.active-page::after { transform: scaleX(1); background-color: #0f172a; }
 
+.logo-group {
+  text-decoration: none;
+
+}
 
 /* ================= 22 SHARP UNBLURRED BACKGROUND SWARM MATRIX ================= */
 .explore-bg-swarm-container {
