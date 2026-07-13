@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notifications - H2 Collective</title>
+  <link rel="stylesheet" href="landing.css">
+  <link rel="stylesheet" href="explore.css">
+  <link rel="stylesheet" href="notifications.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="landing-wrapper">
+    <!-- Blob Engine -->
+    <div class="explore-bg-swarm-container">
+      <script>
+        for (let i = 1; i <= 37; i++) {
+          document.write(`<div class="swarm-morph-blob sharp-blob-${i}"></div>`);
+        }
+      </script>
+    </div>
+    
+    <!-- Updated Universal Navigation -->
+    <nav class="landing-nav">
+  <div class="nav-container">
+    <a href="index.html" class="logo-group light-theme">
+      <img src="assets/light-logo.png" alt="H2 Collective" class="brand-logo-img">
+      <span class="logo-text">COLLECTIVE</span>
+    </a>
+    
+    <div class="nav-toggle" id="navToggle">
+      <span></span><span></span><span></span>
+    </div>
+    
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="nav-link-item">Home</a>
+      <a href="explore.html" class="nav-link-item">Explore</a>
+      <a href="notifications.html" class="nav-link-item active-page">Notifications</a>
+      
+      <div class="nav-profile-container">
+        <a href="profile.html" class="nav-profile-icon">
+          <div class="profile-avatar-placeholder"></div>
+        </a>
+        <div class="profile-dropdown-menu">
+          <div class="dropdown-header">
+            <span class="user-name">User Account</span>
+            <span class="user-email">innovator@h2.collective</span>
+          </div>
+          <a href="profile.html">My Profile</a>
+          <a href="settings.html">Settings</a>
+          <hr class="dropdown-divider">
+          <a href="logout.html" class="logout-link">Log Out</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+    <main class="notification-full-panel">
+      <div class="notification-content-well">
+        <div class="panel-header">
+          <h1>Notifications</h1>
+          <div class="panel-actions">
+            <button class="action-btn secondary">Mark all as read</button>
+            <button class="action-btn primary">Settings</button>
+          </div>
+        </div>
+        <div class="empty-state-container">
+          <div class="notification-icon-sleep">
+            <img src="assets/sleep-bell.png" alt="Sleep Bell">
+          </div>
+          <h2>All caught up</h2>
+          <p>No new activity to report. Check back later.</p>
+        </div>
+      </div>
+    </main>
+
+    <footer id="contact-section" class="landing-footer-brand">
+      <div class="footer-top-grid">
+        <div class="footer-brand-info">
+          <div class="logo-group blue-theme">
+            <img src="assets/blue-logo.png" alt="H2 Collective Icon" class="brand-logo-img">
+            <span class="logo-text">COLLECTIVE</span>
+          </div>
+        
+        </div>
+
+        <div class="footer-link-column">
+          <h4>Navigation</h4>
+          <a href="#explore-highlights">Explore</a>
+          <a href="profile.html">Profile</a>
+          <a href="#contact-section">Contact</a>
+        </div>
+
+        <div class="footer-link-column">
+          <h4>Socials</h4>
+          <a href="https://x.com" target="_blank" rel="noopener">Twitter / X</a>
+          <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom-wrapper">
+        <div class="footer-watermark-text">H2 COLLECTIVE</div>
+        <div class="footer-legal-bar">
+          <p>H2 Collective &copy; 2026</p>
+          <p>All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Mobile Menu Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const navToggle = document.getElementById('navToggle');
+      const navLinks = document.getElementById('navLinks');
+      
+      navToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navLinks.classList.toggle('active');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && !navToggle.contains(e.target)) {
+          navLinks.classList.remove('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+/* --- NOTIFICATIONS PAGE: SPECIFIC LAYOUT --- */
+.notification-full-panel {
+  min-height: 100vh;
+  padding: 8rem 2rem 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 5;
+  position: relative;
+}
+
+.notification-content-well {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 1.5rem;
+  width: 90%;
+  max-width: 1400px;
+  min-height: 70vh;
+  padding: 4rem 5rem;
+  box-shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+  width: 100%;
+}
+
+.action-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.action-btn.primary { background: #0f172a; color: #fff; }
+.action-btn.primary:hover { background: #4e90c5; }
+
+.action-btn.secondary { background: transparent; color: #64748b; border-color: #e2e8f0; }
+.action-btn.secondary:hover { border-color: #4e90c5; color: #4e90c5; }
+
+.empty-state-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-top: 5rem;
+}
+
+.notification-icon-sleep {
+  width: 120px;
+  height: 120px;
+  background: #f1f5f9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+/* Ensure the container is the anchor point */
+.nav-profile-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 100; /* Ensure it stays above other elements */
+}
+
+/* Fix: Ensure hidden by default */
+.profile-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 10px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 8px 0;
+  width: 220px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  z-index: 1000;
+}
+
+/* Show on hover */
+.nav-profile-container:hover .profile-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  margin-top: 5px; /* Slides into position */
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  /* Make sure this is NOT set to 'flex-wrap: wrap' if it causes the jump */
+  flex-wrap: nowrap;
+}
+
+/* Dropdown link styling */
+.profile-dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  color: #475569;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.profile-dropdown-menu a:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+/* Header and Divider */
+.dropdown-header {
+  padding: 10px 20px;
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 5px;
+}
+
+.user-name { display: block; font-weight: 700; color: #0f172a; font-size: 0.85rem; }
+.user-email { display: block; color: #64748b; font-size: 0.75rem; margin-top: 2px; }
+
+.dropdown-divider { 
+  border: 0; 
+  border-top: 1px solid #f1f5f9; 
+  margin: 8px 0; 
+}
+
+.logout-link { color: #e11d48 !important; }
+
+.empty-state-container img{
+    width: 90px;
+}
+
+/* --- MOBILE NAVIGATION FIX --- */
+@media (max-width: 768px) {
+  .nav-toggle { display: flex !important; }
+  
+  .nav-links {
+    display: none; /* Hide by default on mobile */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active { display: flex !important; }
+}
+
+/* --- NOTIFICATION PANEL BUTTONS FIX --- */
+@media (max-width: 768px) {
+  .panel-header {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  
+  .panel-actions {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .action-btn {
+    width: 100%; /* Makes buttons stack/fit width on small screens */
+    text-align: center;
+  }
+}
